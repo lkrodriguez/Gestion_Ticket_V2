@@ -1,0 +1,66 @@
+﻿@model S_Tickets.Models.Resposable
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<a href="@Url.Action("Index","Resposables")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-caret-square-left"></i>
+</a>
+
+<h2>stás seguro que quieres  Eliminar los Datos del Responsable ?</h2>
+
+<h3>E</h3>
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-outline-dark" />
+        </div>
+    }
+</div>

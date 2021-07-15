@@ -1,0 +1,68 @@
+﻿@model S_Tickets.Models.Resposable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="@Url.Action("Index","Resposables")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-caret-square-left"></i>
+</a>
+
+<h2>Detalles del Responsable</h2>
+
+
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+
+<hr />
+
+<p>
+
+    <a href="@Url.Action("Edit", "Resposables", new { id = Model.Id })" title="Editar" class="btn btn-outline-dark" >Editar</a>
+
+</p>

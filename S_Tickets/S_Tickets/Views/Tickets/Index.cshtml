@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Ticket>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<a href="@Url.Action("Nuevo","Tickets")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-plus-square"></i>
+</a>
+
+
+
+<h2>Listado de Tickets</h2>
+<hr />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"># Ticket</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Responsable</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ticket in Model)
+        {
+            <tr>
+                <th scope="row">@ticket.id</th>
+                <td>@ticket.FechaGeneracion</td>
+                <td>@ticket.Estado.Nombre</td>
+                <td>@ticket.Usuario.Nombres</td>
+                <td>@ticket.Resposable.Nombre</td>
+                <td style="width:60px">
+                    <a href="@Url.Action("Detalle","Tickets", new { id=ticket.id } )" title="Detalles"><i class="fa fa-info" aria-hidden="true" style="color:black" ; font-size:20px;></i></a>
+                    <a href="@Url.Action("Actualizar","Tickets", new {id=ticket.id } )" title="Editar"><i class="fa fa-pencil" aria-hidden="true" style="color:blue" ; font-size:20px;></i></a>
+                    <a href="@Url.Action("Eliminar", "Tickets", new { id = ticket.id })" title="Eliminar"><i class="fa fa-minus-circle" aria-hidden="true" style="color:red" ; font-size:20px;></i></a>
+                </td>
+            </tr>
+        }
+        <!-- href="Url.Action("Eliminar", "Tickets", new { id = ticket.id })"-->
+    </tbody>
+</table>

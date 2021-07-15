@@ -1,0 +1,60 @@
+﻿@model IEnumerable<S_Tickets.Models.Resposable>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<a href="@Url.Action("Create", "Resposables")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-plus-square"></i>
+</a>
+
+<h2>Listado de Tecnicos</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Activo)
+        </th>
+
+        <th>Acciones</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Activo)
+        </td>
+        <td>
+            <a href="@Url.Action("Details", "Resposables", new { id = item.Id })" title="Detalles"><i class="fa fa-info" aria-hidden="true" style="color:black" ; font-size:20px;></i></a>
+            <a href="@Url.Action("Edit", "Resposables", new { id = item.Id })" title="Editar"><i class="fa fa-pencil" aria-hidden="true" style="color:blue" ; font-size:20px;></i></a>
+            <a href="@Url.Action("Delete", "Resposables", new { id = item.Id })" title="Eliminar"><i class="fa fa-minus-circle" aria-hidden="true" style="color:red" ; font-size:20px;></i></a>
+        </td>
+    </tr>
+}
+
+</table>

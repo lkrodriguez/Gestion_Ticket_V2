@@ -1,0 +1,54 @@
+﻿@model TicketViewModels
+@{
+    ViewBag.Title = "Detalle";
+}
+
+
+<a href="@Url.Action("Index","Tickets")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-caret-square-left"></i>
+</a>
+
+<h2>Detalles del Ticket </h2>
+<hr />
+
+@if (Model.Ticket == null)
+{
+    <h4>El Numero de TICKET No Existe</h4>
+}
+else
+{
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label"># de Ticket:</label>
+        @Model.Ticket.id
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Fecha De Creacion:</label>
+        @Model.Ticket.FechaGeneracion        
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Estado:</label>
+        @Model.Ticket.Estado.Nombre        
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Usuario:</label>
+        @Model.Ticket.Usuario.Nombres
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Descripción:</label>
+        @Model.Ticket.Descripsion
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label">Responsable:</label>
+        @Model.Ticket.Resposable.Nombre
+    </div>
+
+    
+}

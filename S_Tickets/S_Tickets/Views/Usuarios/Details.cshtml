@@ -1,0 +1,63 @@
+﻿@model S_Tickets.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<a href="@Url.Action("Index","Usuarios")" style="color:black; font-size:30px ; float:right ">
+    <i class="far fa-caret-square-left"></i>
+</a>
+
+<h2>Detalles del Usuario</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellidos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Activo)
+        </dd>
+
+    </dl>
+</div>
+<hr />
+<p>
+    <a href="@Url.Action("Edit", "Usuarios", new { id = Model.id })" title="Editar" class="btn btn-outline-dark">Editar</a>
+
+</p>
